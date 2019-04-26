@@ -1,0 +1,22 @@
+{
+  "name": "API",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ania Nakayama",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.1",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-config-problems": "^2.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "knex": "^0.16.5",
+    "mocha": "^6.1.4",
+    "morgan": "^1.9.1",
+    "pg": "^7.10.0",
+    "prettier": "^1.17.0",
+    "pretty-quick": "^1.10.0",
+    "sinon": "^7.3.2"
+  }
+}
