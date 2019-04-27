@@ -16,7 +16,7 @@ module.exports = (services) => {
 
   router.patch("/api/characters/:name", (req, res) => res.send("Patched"));
 
-  router.delete("/api/characters/:id", (req, res) => res.send("deleted"));
+  router.delete("/api/characters/:name", (req, res) => res.send("deleted"));
 
   return router;
 };
