@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 module.exports = (services) => {
-  router.get("/api/characters", (req, res) =>
+  router.get("/api/character", (req, res) =>
     services.db.characters
       .list()
       .then((characters) => res.status(200).json(characters))
@@ -11,7 +11,7 @@ module.exports = (services) => {
   );
 
   router.get("/", (req, res) => {
-    res.json({ info: "Node.js, Express, and Postgres API" });
+    res.send("Hello");
   });
   return router;
 };

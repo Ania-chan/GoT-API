@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "game_of_thronesregular";
+  src: url("fonts/game_of_thrones-webfont.woff2") format("woff2"),
+    url("fonts/game_of_thrones-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-family: "game_of_thronesregular";
+  text-align: center;
+  color: #d2d6d0;
+}
+
+.jumbotron {
+  background-color: #0f1112;
+}
+
+.form-control {
+  padding: 0.375rem 12rem 0.375rem 0.375rem;
+}
