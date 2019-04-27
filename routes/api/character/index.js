@@ -10,5 +10,8 @@ module.exports = (services) => {
       .catch((err) => res.status(400).send(err.message))
   );
 
+  router.get("/", (req, res) => {
+    res.json({ info: "Node.js, Express, and Postgres API" });
+  });
   return router;
 };
