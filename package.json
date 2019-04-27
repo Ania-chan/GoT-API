@@ -10,7 +10,8 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "migrate": "knex migrate:latest --knexfile services/db/knexfile.js",
-    "rollback": "knex migrate:rollback --knexfile services/db/knexfile.js "
+    "rollback": "knex migrate:rollback --knexfile services/db/knexfile.js",
+    "seed": "knex seed:run --knexfile services/db/knexfile.js"
   },
   "dependencies": {
     "bluebird": "^3.5.4",

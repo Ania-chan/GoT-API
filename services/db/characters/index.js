@@ -1,5 +1,6 @@
 const Character = function(dbCharacter) {
   this.id = dbCharacter.id;
+  this.name = dbCharacter.characterName;
 };
 
 module.exports = (knex) => {

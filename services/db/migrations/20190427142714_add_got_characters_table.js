@@ -4,19 +4,18 @@ exports.up = function(knex, Promise) {
 
     table
       .string("characterName", 50)
-      .unique()
       .notNullable()
       .index();
 
     table.string("houseName", 30);
 
-    table.string("characterImageThumb", 200);
+    table.string("characterImageThumb", 400);
 
-    table.string("characterImageFull", 200);
+    table.string("characterImageFull", 400);
 
     table.string("actorName", 50);
 
-    table.string("killed", 200);
+    table.string("killed", 400);
 
     table.string("killedBy", 1000);
   });
