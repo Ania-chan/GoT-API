@@ -1,22 +1,39 @@
 {
-  "name": "API",
+  "name": "",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Ania Nakayama",
   "license": "MIT",
+  "scripts": {
+    "test": "node tests/initialize.js && mocha tests/test.js && yarn lint",
+    "lint": "eslint --fix ./**/*.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "migrate": "knex migrate:latest --knexfile services/db/knexfile.js",
+    "rollback": "knex migrate:rollback --knexfile services/db/knexfile.js "
+  },
   "dependencies": {
+    "bluebird": "^3.5.4",
     "body-parser": "^1.19.0",
     "ejs": "^2.6.1",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.2.0",
     "eslint-config-problems": "^2.0.0",
     "eslint-plugin-prettier": "^3.0.1",
+    "express": "^4.16.4",
     "knex": "^0.16.5",
-    "mocha": "^6.1.4",
+    "moment": "^2.24.0",
     "morgan": "^1.9.1",
     "pg": "^7.10.0",
     "prettier": "^1.17.0",
     "pretty-quick": "^1.10.0",
+    "underscore": "^1.9.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "mocha": "^6.1.4",
+    "nodemon": "^1.18.11",
     "sinon": "^7.3.2"
   }
 }
