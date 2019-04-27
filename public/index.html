@@ -29,78 +29,89 @@
     >
       <div class="row">
         <div class="col-12">
-          <div class="input-group mb-3">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Search for character"
-              aria-label="get-character"
-              aria-describedby="button-get-character"
-            />
-            <div class="input-group-append">
-              <button
-                class="btn btn-outline-secondary"
-                type="button"
-                id="button-get-character"
-              >
-                Search
-              </button>
+          <form action="/api/characters/:id" method="get">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search for character"
+                aria-label="get-character"
+                aria-describedby="button-get-character"
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  id="button-get-character"
+                >
+                  Search
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="input-group mb-3">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Add character"
-              aria-label="post-character"
-              aria-describedby="button-post-character"
-            />
-            <div class="input-group-append">
-              <button
-                class="btn btn-outline-secondary"
-                type="button"
-                id="button-post-character"
-              >
-                Add
-              </button>
+          </form>
+
+          <form action="/api/characters" method="post">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Add character"
+                aria-label="post-character"
+                aria-describedby="button-post-character"
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  id="button-post-character"
+                >
+                  Add
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="input-group mb-3">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Change character"
-              aria-label="patch-character"
-              aria-describedby="button-patch-character"
-            />
-            <div class="input-group-append">
-              <button
-                class="btn btn-outline-secondary"
-                type="button"
-                id="button-patch-character"
-              >
-                Change
-              </button>
+          </form>
+
+          <form action="/api/characters/:id" method="patch">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Change character"
+                aria-label="patch-character"
+                aria-describedby="button-patch-character"
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  id="button-patch-character"
+                >
+                  Change
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="input-group mb-3">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Delete character"
-              aria-label="delete-character"
-              aria-describedby="button-delete-character"
-            />
-            <div class="input-group-append">
-              <button
-                class="btn btn-outline-secondary"
-                type="button"
-                id="button-delete-character"
-              >
-                Delete
-              </button>
+          </form>
+
+          <form action="/api/characters/:id" method="delete">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Delete character"
+                aria-label="delete-character"
+                aria-describedby="button-delete-character"
+              />
+              <div class="input-group-append">
+                <input
+                  class="btn btn-outline-secondary"
+                  type="submit"
+                  id="button-delete-character"
+                >
+                  Delete
+                </button>
+              </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </main>
