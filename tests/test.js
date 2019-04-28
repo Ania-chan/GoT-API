@@ -24,9 +24,9 @@ describe("GoT API", () => {
         houseName: "Targaryen",
         characterImageThumb: "https://m/imageThumb.jpg",
         characterImageFull: "https://m/imageFull.jpg",
-        actorName: "David Rintoul",
-        killed: ["Brandon Stark", "Rickard Stark"],
-        killedBy: ["Jaime Lannister"],
+        actorName: null,
+        killed: ["Dragon"],
+        killedBy: null,
       },
     ];
 
