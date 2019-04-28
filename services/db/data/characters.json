@@ -241,7 +241,14 @@
           "seasonsActive": [1]
         }
       ],
-      "killedBy": ["Sandor Clegane"]
+      "killedBy": [
+        "Sandor Clegane",
+        "unknown",
+        "unknown",
+        "unknown",
+        "Lannister soldier",
+        "Sandor Clegane"
+      ]
     },
     {
       "characterName": "Bianca",

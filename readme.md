@@ -39,4 +39,4 @@ I used Game of Thrones characters data from this repository:
 
 ## License
 
-MIT
+[MIT](https://choosealicense.com/licenses/mit/)

@@ -14,5 +14,7 @@ module.exports = (knex) => {
     create: require("./create")(knex, Character),
     list: require("./list")(knex, Character),
     get: require("./get")(knex, Character),
+    patch: require("./patch")(knex, Character),
+    delete: require("./delete")(knex, Character),
   };
 };
