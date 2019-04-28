@@ -20,7 +20,7 @@ describe("GoT API", () => {
     request = chai.request(app).keepOpen();
     database = [
       {
-        characterName: "Cersei_Lannister",
+        characterName: "Mia",
         houseName: "Targaryen",
         characterImageThumb: "https://m/imageThumb.jpg",
         characterImageFull: "https://m/imageFull.jpg",
@@ -45,7 +45,7 @@ describe("GoT API", () => {
   });
   describe("POST /api/characters", () => {
     it("should add a new character by name", async () => {
-      const res = await request.post("/api/characters").send(database[0]);
+      const res = await request.post("/api/characters").send(JSONdata);
       const allCharacters = await request.get("/api/characters");
       result[result.length - 1].should.deep.equal(database[0]);
     });
