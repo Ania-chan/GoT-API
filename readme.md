@@ -1,45 +1,42 @@
-# \$\$REPO
+# Game of Thrones API
 
-> $$
-> $$
-
-background details relevant to understanding what this module does
-
-## Usage
-
-```js
-$$EXAMPLE;
-```
-
-outputs
-
-```
-hello warld
-```
+This was created during my time as a student at Code Chrysalis. It's a simple CRUD API that allows you to show, add, edit and delete Game of Thrones characters data.
 
 ## API
 
-```js
-var $$rePo = require("$$REPO");
-```
+You can get the following data:
 
-See [api_formatting.md](api_formatting.md) for tips.
+```js
+characterName: String;
+houseName: String;
+characterImageThumb: URL;
+characterImageFull: URL;
+actorName: String;
+killed: [String];
+killedBy: [String];
+```
 
 ## Install
 
-With [npm](https://npmjs.org/) installed, run
+With [yarn](https://yarnpkg.com/en/) installed, run
 
 ```
-$ npm install $$REPO
+$ yarn
+```
+
+```
+$ yarn migrate
+```
+
+```
+$ yarn start
 ```
 
 ## Acknowledgments
 
-$$
-## See Also
-
-- [`noffle/common-readme`](https://github.com/noffle/common-readme)
-- ...
+I used Game of Thrones characters data from this repository:
+[`jeffreylancaster/game-of-thrones`](https://github.com/jeffreylancaster/game-of-thrones)
 
 ## License
-$$
+
+MIT
