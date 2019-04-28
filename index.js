@@ -62,3 +62,7 @@ app.use((err, req, res, next) => {
 app.listen(config.express.port, () => {
   services.logger.log(`Server up and listening on port ${config.express.port}`);
 });
+
+app.get("/", function(req, res, next) {
+  res.render("index", { page: "Home", menuId: "home" });
+});

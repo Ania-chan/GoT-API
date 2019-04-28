@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Got-API</title>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -54,7 +55,6 @@
             <div class="input-group mb-3">
               <input
                 type="text"
-                value="<%= input.text %>"
                 class="form-control"
                 placeholder="Add character"
                 aria-label="post-character"
@@ -118,17 +118,32 @@
             <p>
               <h3>Instructions</h3>
               <p>
+                <h5>Select all</h5>
+                <p><span class="code">/api/characters?limit=X</span></p>
+                <p>If no limit is provided all characters will be shown</p>
+                <br>
                 <h5>Search</h5>
+                <p><span class="code">/api/characters/[character_name]</span></p>
+                <p>You need to input full name separated with "_"</p>
+                <br>
                 <h5>Add</h5>
-                <span></span>
+                <p><span class="code">/api/characters?name=new_name</span></p>
+                <p>At the moment you can only add new names</p>
+                <br>
                 <h5>Update</h5>
+                <p><span class="code">/api/characters/[character_name]?name=new_name</span></p>
+                <p>At the moment you can only edit names</p>
+                <br>
                 <h5>Delete</h5>
+                <p><span class="code">/api/characters/[character_name]</span></p>
+                <p>It can be only tested with tools like Insomnia or Postman</p>
+                <br>
               </ul>
             </p>
           </article>
 
           <footer>
-            <h6><a href="https://github.com/Ania-chan/GoT-API">Check out my GitHub Repository</a></h4>
+            <h6><a target="_blank" href="https://github.com/Ania-chan/GoT-API">Check out my GitHub Repository</a></h4>
           </footer>
         </div>
       </div>

@@ -5,26 +5,20 @@ module.exports = (knex, Character) => {
       .split("_")
       .map((word) => word[0].toUpperCase() + word.slice(1))
       .join(" ");
-    const query = params.query;
+    const query = params.query
+      .toLowerCase()
+      .split("_")
+      .map((word) => word[0].toUpperCase() + word.slice(1))
+      .join(" ");
+
+    console.log("name: ", characterName);
+    console.log("query ", query);
 
     return knex("got_characters")
       .where({ characterName })
-      .select()
-      .then((characters) => {
-        if (characters.length) return new Character(characters.pop());
-
-        throw new Error(`Error finding user ${characterName}`);
-      })
-      .then((character) => {
-        for (const key in query) {
-          character[key] = query[key];
-        }
-        return knex
-          .where({ id: character.id })
-          .update({ characterName: character.characterName });
-      })
-      .then((character) => {
-        return new Character(character);
+      .update({ characterName: query })
+      .then(() => {
+        return `Changed ${characterName} to ${query}`;
       });
   };
 };

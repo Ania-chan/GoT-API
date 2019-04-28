@@ -12,7 +12,7 @@ module.exports = (knex, Character) => {
       .then((characters) => {
         if (characters.length) return new Character(characters.pop());
 
-        throw new Error(`Error finding user ${characterName}`);
+        throw new Error(`Error finding ${characterName}`);
       });
   };
 };

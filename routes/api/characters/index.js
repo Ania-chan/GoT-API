@@ -22,14 +22,19 @@ module.exports = (services) => {
     const limit = req.query.limit;
     services.db.characters
       .list()
-      .then((characters) => res.status(200).json(characters.slice(0, limit)))
+      .then((characters) => {
+        characters = characters.slice(0, limit);
+        res.status(200).render("characters/list", { characters });
+      })
       .catch((err) => res.status(400).send(err.message));
   });
 
   router.get("/:name", (req, res) => {
     services.db.characters
       .get({ characterName: req.params.name })
-      .then((character) => res.status(200).json(character))
+      .then((character) =>
+        res.status(200).render("characters/show", { character })
+      )
       .catch((err) => res.status(400).send(err.message));
   });
 
@@ -37,16 +42,16 @@ module.exports = (services) => {
     services.db.characters
       .patch({
         characterName: req.params.name,
-        query: req.query,
+        query: req.query.name,
       })
-      .then((character) => res.status(200).json(character))
+      .then((message) => res.status(200).json(message))
       .catch((err) => res.status(400).send(err.message));
   });
 
   router.delete("/:name", (req, res) => {
     services.db.characters
       .delete({ characterName: req.params.name })
-      .then((character) => res.status(200).json(character))
+      .then((message) => res.status(200).json(message))
       .catch((err) => res.status(400).send(err.message));
   });
 
