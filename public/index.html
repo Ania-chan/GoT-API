@@ -37,23 +37,32 @@
               <p>
                 <h5>Select all</h5>
                 <p><span class="code">/api/characters?limit=X</span></p>
-                <p>If no limit is provided all characters will be shown</p>
+                <p>Input the limit as a number instead of X <br>If no limit is provided all characters will be shown.</p>
                 <br>
                 <h5>Search</h5>
                 <p><span class="code">/api/characters/[character_name]</span></p>
-                <p>You need to input full name separated with "_"</p>
+                <p>You need to input full name separated with "_".</p>
                 <br>
                 <h5>Add</h5>
                 <p><span class="code">/api/characters?name=new_name</span></p>
-                <p>At the moment you can only add new names <br> It can be only tested with tools like Insomnia or Postman</p>
+                <p>You need to send an object with all the necessary fields. <br> It can be only tested with tools like Insomnia or Postman.</p>
+                <p><span class="code">{<br>
+                    "characterName": "Mia",<br>
+                    "houseName": "Targaryen",<br>
+                    "characterImageThumb": "https://imageThumb.jpg",<br>
+                    "characterImageFull": "https://imageFull.jpg",<br>
+                    "actorName": null,<br>
+                    "killed": ["Dragon"],<br>
+                    "killedBy": null<br>
+            }</span></p>
                 <br>
                 <h5>Update</h5>
                 <p><span class="code">/api/characters/[character_name]?name=new_name</span></p>
-                <p>At the moment you can only edit names<br> It can be only tested with tools like Insomnia or Postman</p>
+                <p>At the moment you can only edit names.<br> It can be only tested with tools like Insomnia or Postman.</p>
                 <br>
                 <h5>Delete</h5>
                 <p><span class="code">/api/characters/[character_name]</span></p>
-                <p>It can be only tested with tools like Insomnia or Postman</p>
+                <p>It can be only tested with tools like Insomnia or Postman.</p>
                 <br>
               </ul>
             </p>
@@ -61,6 +70,8 @@
 
           <footer>
             <h5><a target="_blank" href="https://github.com/Ania-chan/GoT-API">Check out my GitHub Repository!</a></h5>
+            <hr>
+            <h7>By Ania Namakayama, 2019</h7>
           </footer>
         </div>
       </div>
