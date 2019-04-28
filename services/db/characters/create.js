@@ -3,7 +3,8 @@ const validateUsername = (name) =>
 
 module.exports = (knex, Character) => {
   return (params) => {
-    const characterName = params.characterName;
+    const characterName = params.newCharacter.characterName;
+    const newCharacter = params.newCharacter;
 
     if (!validateUsername(characterName)) {
       return Promise.reject(
@@ -12,7 +13,15 @@ module.exports = (knex, Character) => {
     }
 
     return knex("got_characters")
-      .insert({ characterName })
+      .insert({
+        characterName: newCharacter.characterName,
+        houseName: newCharacter.houseName,
+        characterImageThumb: newCharacter.characterImageThumb,
+        characterImageFull: newCharacter.characterImageFull,
+        actorName: newCharacter.actorName,
+        killed: newCharacter.killed,
+        killedBy: newCharacter.killedBy,
+      })
       .then(() => {
         return knex("got_characters")
           .where({ characterName })

@@ -4,8 +4,9 @@ const router = express.Router();
 
 module.exports = (services) => {
   router.post("/", (req, res) => {
+    const newCharacter = req.body;
     services.db.characters
-      .create({ characterName: req.query.name })
+      .create({ newCharacter })
       .then((character) => res.status(201).json(character))
       .catch((err) => {
         if (err.message === "That character already exists") {
