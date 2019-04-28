@@ -17,6 +17,9 @@ const express = require("express");
 
 const app = express();
 
+const ejs = require("ejs");
+app.set("view enjine", "ejs");
+
 /**
  ********************************SERVER SETUP********************************
  ****************************************************************************
@@ -60,3 +63,10 @@ app.use((err, req, res, next) => {
 app.listen(config.express.port, () => {
   services.logger.log(`Server up and listening on port ${config.express.port}`);
 });
+
+app.get("/api/characters", (req, res) =>
+  services.db.characters
+    .list()
+    .then((characters) => res.status(200).json(characters))
+    .catch((err) => res.status(400).send(err.message))
+);

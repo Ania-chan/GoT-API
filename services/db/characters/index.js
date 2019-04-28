@@ -1,6 +1,6 @@
 const Character = function(dbCharacter) {
   this.id = dbCharacter.id;
-  this.name = dbCharacter.characterName;
+  this.characterName = dbCharacter.characterName;
   this.houseName = dbCharacter.houseName;
   this.characterImageThumb = dbCharacter.characterImageThumb;
   this.characterImageFull = dbCharacter.characterImageFull;

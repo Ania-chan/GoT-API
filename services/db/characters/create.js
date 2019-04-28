@@ -3,25 +3,25 @@ const validateUsername = (name) =>
 
 module.exports = (knex, Character) => {
   return (params) => {
-    const name = params.name;
+    const characterName = params.characterName;
 
-    if (!validateUsername(name)) {
+    if (!validateUsername(characterName)) {
       return Promise.reject(
-        new Error("Username must be provided, and be at least two characters")
+        new Error("Name must be provided, and be at least two characters")
       );
     }
 
     return knex("got_characters")
-      .insert({ name })
+      .insert({ characterName })
       .then(() => {
         return knex("got_characters")
-          .where({ name })
+          .where({ characterName })
           .select();
       })
       .then((character) => new Character(character.pop()))
       .catch((err) => {
         if (err.message.match("duplicate key value"))
-          throw new Error("That username already exists");
+          throw new Error("That character already exists");
         throw err;
       });
   };
