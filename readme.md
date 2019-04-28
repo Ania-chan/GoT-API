@@ -1,16 +1,17 @@
+![Screenshot](top-image.png)
+
 # Game of Thrones API
 
-This was created during my time as a student at Code Chrysalis. It's a simple CRUD API that allows you to show, add, edit and delete Game of Thrones characters data.
+This was created during my time as a student at Code Chrysalis.
+It's a simple CRUD API that allows you to show, add, edit and delete Game of Thrones character data.
 
 ## API
-
-You can get the following data:
 
 ```js
 characterName: String;
 houseName: String;
-characterImageThumb: URL;
-characterImageFull: URL;
+characterImageThumb: String(URL);
+characterImageFull: String(URL);
 actorName: String;
 killed: [String];
 killedBy: [String];
@@ -34,7 +35,7 @@ $ yarn start
 
 ## Acknowledgments
 
-I used Game of Thrones characters data from this repository:
+I used Game of Thrones character data from this repository:
 [`jeffreylancaster/game-of-thrones`](https://github.com/jeffreylancaster/game-of-thrones)
 
 ## License
