@@ -12,9 +12,13 @@ const app = require("../routes/api/index");
 
 describe("GoT API", () => {
   let request;
-  let JSONdata;
-  let fakeKnex;
+  let fakeCreate;
+  let fakeList;
+  let fakePatch;
+  let fakeGet;
+  let fakeDelete;
   let database;
+  let JSONdata;
   beforeEach(() => {
     //setup
     request = chai.request(app).keepOpen();
@@ -31,11 +35,49 @@ describe("GoT API", () => {
     ];
 
     JSONdata = JSON.stringify(database);
+
+    fakeCreate = sinon
+      .stub(services.db.characters, "create")
+      .returns((characterObj) => {
+        database.push(characterObj);
+        return database[database.length - 1];
+      });
+    fakeList = sinon.stub(services.db.characters, "list").returns(() => {
+      return database;
+    });
+    fakePatch = sinon
+      .stub(services.db.characters, "patch")
+      .returns((name, newName) => {
+        const characterToPatch = database.filter(
+          (characterObj) => characterObj.characterName === name
+        );
+        characterToPatch.characterName = newName;
+        return `Changed ${name} to ${newName}`;
+      });
+    fakeGet = sinon.stub(services.db.characters, "get").returns((character) => {
+      return database.filter(
+        (characterObj) => character.characterName === characterObj.characterName
+      );
+    });
+    fakeDelete = sinon
+      .stub(services.db.characters, "delete")
+      .returns((name) => {
+        database.filter((character, i) => {
+          if (character.characterName === name) {
+            database.splice(i, 1);
+            return `Deleted ${name}`;
+          }
+        });
+      });
   });
   afterEach(() => {
     //teardown
+    fakeCreate.restore();
+    fakeList.restore();
+    fakePatch.restore();
+    fakeGet.restore();
+    fakeDelete.restore();
     request.close();
-    //fakeKnex.restore();
   });
   describe("GET /api/characters", () => {
     it("should return list of characters", async () => {
