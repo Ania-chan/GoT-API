@@ -19,6 +19,12 @@ killedBy: [String];
 
 ## Install
 
+Create a database
+
+```
+# create database got_api;
+```
+
 With [yarn](https://yarnpkg.com/en/) installed, run
 
 ```
