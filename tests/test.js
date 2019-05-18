@@ -55,7 +55,7 @@ describe("GoT API", () => {
       );
     });
     fakeDelete = sinon.stub(db.characters, "delete").returns((name) => {
-      database.filter((character, i) => {
+      return database.filter((character, i) => {
         if (character.characterName === name) {
           database.splice(i, 1);
           return `Deleted ${name}`;
